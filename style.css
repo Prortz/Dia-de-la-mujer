@@ -1,0 +1,118 @@
+/* Estilos para el cuerpo del documento */
+body {
+  --t: 0.5; /* Variable para la duración de las transiciones */
+  --scale: 3; /* Variable para la escala de las flores */
+}
+
+/* Estilos para el contenedor SVG root */
+svg.root {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: -100em;
+}
+
+/* Estilos para el contenedor SVG */
+svg {
+  width: 100vw;
+  height: 100vh;
+  background: #e0cae0;
+  fill-opacity: 0.75;
+}
+
+/* Estilos para los símbolos */
+symbol {
+  overflow: visible;
+}
+
+/* Estilos para las transformaciones de los pétalos */
+svg use {
+  transform: rotate(0deg);
+  transition: transform calc(var(--t) * 1s);
+}
+
+/* Estilos para el grupo 'a' */
+svg g.a {
+  transition: transform calc(var(--t) * 1s);
+}
+
+/* Estilos para el grupo 'a' con transformaciones específicas */
+svg g.a {
+  transform: scale(var(--scale)) rotate(-90deg);
+  filter: url('#f');
+}
+
+/* Estilos para los pétalos */
+._2 {
+  --n: 2;
+}
+
+._3 {
+  --n: 3;
+}
+
+._4 {
+  --n: 4;
+}
+
+._5 {
+  --n: 5;
+}
+
+/* Estilos para los pétalos en el grupo 'a' */
+svg .a g:nth-of-type(1) {
+  transform: rotate(calc(-0.5 * 180deg / var(--n)));
+}
+
+svg .a g:nth-of-type(2) {
+  transform: rotate(calc(0.5 * 180deg / var(--n)));
+}
+
+/* Estilos para los pétalos específicos en el grupo 'a' */
+svg .a g:nth-of-type(1) use:nth-of-type(2),
+svg .a g:nth-of-type(1) use:nth-of-type(3),
+svg .a g:nth-of-type(1) use:nth-of-type(4),
+svg .a g:nth-of-type(1) use:nth-of-type(5) {
+  transform: rotate(calc(-1deg * 180 / var(--n))) scale(1.5);
+}
+
+svg .a g:nth-of-type(2) use:nth-of-type(2),
+svg .a g:nth-of-type(2) use:nth-of-type(3),
+svg .a g:nth-of-type(2) use:nth-of-type(4),
+svg .a g:nth-of-type(2) use:nth-of-type(5) {
+  transform: rotate(calc(1deg * 180 / var(--n))) scale(1.5);
+}
+
+/* Estilos para los textos en el centro */
+#texto0 {
+  position: fixed;
+  top: 40%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(198, 177, 20);
+}
+
+#texto1 {
+  position: fixed;
+  top: 65%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(14, 0, 144); /* Color del texto */
+}
+
+#texto2 {
+  position: fixed;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(5, 65, 118, 0.532); /* Color del texto */
+}
